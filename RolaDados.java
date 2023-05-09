@@ -62,17 +62,19 @@ public class RolaDados {
         
         return dados_rolados;
     }
+
+    //public java.lang.String toString()
     
 
     public static void main(String[] args){
-        int n = 5;
+        int n = 3;
         RolaDados r = new RolaDados(n);
 
         int[] rolados;
         rolados = new int[n];
 
         
-        rolados = r.rolar("1 4 5 3 2");
+        rolados = r.rolar("3 2");
         for(int i = 0; i < n; i++){
             System.out.println(rolados[i]);
         }

@@ -28,6 +28,24 @@ public class Dado{
         return rolagem;
     }
 
+    @Override
+    public java.lang.String toString(){
+        String extremidade = "+-----+";
+
+        
+        }
+
+    }
+
+    /*
+     * 
+     *  +-----+    
+        |*   *|    
+        |  *  |    
+        |*   *|    
+        +-----+   
+     * 
+     */
 
     public static void main(String[] args){
         Dado dado = new Dado();
