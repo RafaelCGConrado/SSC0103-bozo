@@ -33,10 +33,8 @@ public class RolaDados {
 
         
         for(int i = 0; i < this.n_dados; i++){
-            
             if(quais[i] == true){
                 dados_rolados[i] = this.dados[i].rolar();
-                
             }
             
             else{
@@ -48,17 +46,23 @@ public class RolaDados {
     }
 
     public int[] rolar(java.lang.String s){
-        int tamanho_s = s.length();
+        int[] dados_rolados = new int[this.n_dados];
 
-        for(int i = 0; i < tamanho_s; i++){
-            String[] palavra = new String[1];
-            palavra = 
+        String[] palavra = s.split(" ");
+        int tamanho = palavra.length;
 
+        for(int i = 0; i < tamanho; i++){
+            int numeroConvertido = Integer.parseInt(palavra[i]);
+            this.dados[numeroConvertido-1].rolar();
+        }
 
+        for(int i = 0; i < this.n_dados; i++){
+            dados_rolados[i] = this.dados[i].getLado();
         }
         
+        return dados_rolados;
     }
-
+    
 
     public static void main(String[] args){
         int n = 5;
@@ -67,9 +71,8 @@ public class RolaDados {
         int[] rolados;
         rolados = new int[n];
 
-        boolean[] quais = {true, true, true, true, true};
-
-        rolados = r.rolar(quais);
+        
+        rolados = r.rolar("1 4 5 3 2");
         for(int i = 0; i < n; i++){
             System.out.println(rolados[i]);
         }
