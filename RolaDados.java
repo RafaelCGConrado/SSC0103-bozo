@@ -30,8 +30,6 @@ public class RolaDados {
     public int[] rolar(boolean[] quais){
         int[] dados_rolados = new int[this.n_dados];
         
-
-        
         for(int i = 0; i < this.n_dados; i++){
             if(quais[i] == true){
                 dados_rolados[i] = this.dados[i].rolar();
@@ -56,8 +54,8 @@ public class RolaDados {
             this.dados[numeroConvertido-1].rolar();
         }
 
-        for(int i = 0; i < this.n_dados; i++){
-            dados_rolados[i] = this.dados[i].getLado();
+        for(int j = 0; j < this.n_dados; j++){
+            dados_rolados[j] = this.dados[j].getLado();
         }
         
         return dados_rolados;
@@ -67,16 +65,14 @@ public class RolaDados {
     public java.lang.String toString(){
 
         
-        String resultado = new String();
+        String[] matriz = new String[n_dados];
+
 
         for(int i = 0; i < n_dados; i++){
-            String repDado = dados[i].toString();
-            resultado = resultado +"\n"+repDado;
+            // matriz[i] = (dados[i].toString()).split("\n");
+
+
         }
-
-        
-
-
 
     }
     
@@ -93,10 +89,5 @@ public class RolaDados {
         for(int i = 0; i < n; i++){
             System.out.println(rolados[i]);
         }
-
-
-
-
-
     }
 }
