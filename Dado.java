@@ -31,33 +31,62 @@ public class Dado{
     @Override
     public java.lang.String toString(){
         String extremidade = "+-----+";
-
+        String linha1 = new String();
+        String linha2 = new String();
+        String linha3 = new String();
         
+        switch(this.lado_anterior){
+            case 1:
+                linha1 = "|     |";
+                linha2 = "|  *  |";
+                linha3 = "|     |";
+                break;
+
+            case 2:
+                linha1 = "|*    |";
+                linha2 = "|     |";
+                linha3 = "|    *|";
+                break;
+
+            case 3:
+                linha1 = "|*    |";
+                linha2 = "|  *  |";
+                linha3 = "|    *|";
+                break;
+
+            case 4:
+                linha1 = "|*   *|";
+                linha2 = "|     |";
+                linha3 = "|*   *|";
+                break;
+
+            case 5:
+                linha1 = "|*   *|";
+                linha2 = "|  *  |";
+                linha3 = "|*   *|";
+                break;
+
+            case 6: 
+                linha1 = "|*   *|";
+                linha2 = "|*   *|";
+                linha3 = "|*   *|";
+                break;
+
+            
+            // String resultado = extremidade + linha1+ linha2+ linha3+ extremidade;
         }
 
-    }
-
-    /*
-     * 
-     *  +-----+    
-        |*   *|    
-        |  *  |    
-        |*   *|    
-        +-----+   
-     * 
-     */
+        String resultado = (extremidade+"\n"+linha1+"\n"+linha2+"\n"+linha3+"\n"+extremidade);
+        return resultado;
+        }
 
     public static void main(String[] args){
         Dado dado = new Dado();
         // System.out.println(dado.lado_anterior);
         System.out.println(dado.rolar());
-        System.out.println(dado.lado_anterior);
+        String resultado = dado.toString();
 
-        System.out.println(dado.rolar());
-        System.out.println(dado.lado_anterior);
-
-        System.out.println(dado.rolar());
-        System.out.println(dado.lado_anterior);
+        System.out.print(resultado);
     }
 
 

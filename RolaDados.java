@@ -63,7 +63,22 @@ public class RolaDados {
         return dados_rolados;
     }
 
-    //public java.lang.String toString()
+    @Override
+    public java.lang.String toString(){
+
+        
+        String resultado = new String();
+
+        for(int i = 0; i < n_dados; i++){
+            String repDado = dados[i].toString();
+            resultado = resultado +"\n"+repDado;
+        }
+
+        
+
+
+
+    }
     
 
     public static void main(String[] args){
