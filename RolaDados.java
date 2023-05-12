@@ -89,16 +89,16 @@ public class RolaDados {
     
 
     public static void main(String[] args){
-        int n = 6;
-        RolaDados r = new RolaDados(n);
+        // int n = 6;
+        // RolaDados r = new RolaDados(n);
 
-        int[] rolados;
-        rolados = new int[n];
+        // int[] rolados;
+        // rolados = new int[n];
 
         
-        rolados = r.rolar("1 6");
+        // rolados = r.rolar("1 6");
         
-        System.out.println(r.toString());
+        // System.out.println(r.toString());
 
 
     }
