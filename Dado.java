@@ -71,11 +71,15 @@ public class Dado{
                 linha2 = "|*   *|";
                 linha3 = "|*   *|";
                 break;
-
+            
+            case -1:
+                linha1 = "       ";
+                linha2 = "       ";
+                linha3 = "       ";
             
             // String resultado = extremidade + linha1+ linha2+ linha3+ extremidade;
         }
-
+        
         String resultado = (extremidade+"\n"+linha1+"\n"+linha2+"\n"+linha3+"\n"+extremidade);
         return resultado;
         }

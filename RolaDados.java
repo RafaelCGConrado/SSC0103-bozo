@@ -65,29 +65,41 @@ public class RolaDados {
     public java.lang.String toString(){
 
         
-        String[] matriz = new String[n_dados];
+        String[][] matriz = new String[n_dados][5];
 
 
+        //Preenchendo a matriz
         for(int i = 0; i < n_dados; i++){
-            // matriz[i] = (dados[i].toString()).split("\n");
-
+            matriz[i] = (dados[i].toString()).split("\n");
 
         }
+        
+        String resultado = new String();
 
+        for(int i = 0; i < 5; i++){
+            for(int j = 0; j < n_dados; j++){
+                resultado = resultado + matriz[j][i] + "  ";
+            }
+            resultado = resultado + "\n";
+        }
+
+
+        return resultado;
     }
     
 
     public static void main(String[] args){
-        int n = 3;
+        int n = 6;
         RolaDados r = new RolaDados(n);
 
         int[] rolados;
         rolados = new int[n];
 
         
-        rolados = r.rolar("3 2");
-        for(int i = 0; i < n; i++){
-            System.out.println(rolados[i]);
-        }
+        rolados = r.rolar("1 6");
+        
+        System.out.println(r.toString());
+
+
     }
 }
