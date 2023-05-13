@@ -1,6 +1,6 @@
 public class RolaDados {
-    Dado[] dados;
-    public int n_dados;
+    private Dado[] dados;
+    private int n_dados;
 
 
 
@@ -89,14 +89,14 @@ public class RolaDados {
     
 
     public static void main(String[] args){
-        // int n = 6;
+        // int n = 3;
         // RolaDados r = new RolaDados(n);
 
         // int[] rolados;
         // rolados = new int[n];
 
         
-        // rolados = r.rolar("1 6");
+        // rolados = r.rolar("1 2 3");
         
         // System.out.println(r.toString());
 
