@@ -50,7 +50,7 @@ public class Placar {
         }
 
         if(posicao == 9 && isQuadra(dados)){
-            
+
 
 
             placar[posicaoReal] = 30;
@@ -112,7 +112,7 @@ public class Placar {
 
     private boolean isSequencia(int[] dados){
 
-        for(int i = 0; i < dados.length - 1; i++){
+        for(int i = 0; i < dados.length ; i++){
             
         }
 
@@ -125,7 +125,7 @@ public class Placar {
 
     private boolean isQuadra(int[] dados){
         int lado = dados[0];
-        int frequencia = 0;
+        int frequencia = 1;
 
         for(int i = 1; i < dados.length; i++){
             if(dados[i] == lado) frequencia++;
@@ -140,7 +140,7 @@ public class Placar {
 
     private boolean isQuina(int[] dados){
         int lado = dados[0];
-        int frequencia = 0;
+        int frequencia = 1;
 
         for(int i = 1; i < dados.length; i++){
             if(dados[i] == lado) frequencia++;
