@@ -4,6 +4,7 @@ public class Dado{
     private static Random random = new Random();
 
     Dado(){
+        //O lado anterior é marcado como -1 (dado ainda não rolado)
         lados = 6;
         lado_anterior = -1;
 
@@ -19,12 +20,13 @@ public class Dado{
 
     }
 
+
+    //Faz a rolagem e armazena em lado_anterior
     int rolar(){
-        
         int rolagem = random.getIntRand(lados);
         rolagem++;
         
-        this.lado_anterior = rolagem;
+        lado_anterior = rolagem;
         return rolagem;
     }
 
@@ -35,7 +37,7 @@ public class Dado{
         String linha2 = new String();
         String linha3 = new String();
         
-        switch(this.lado_anterior){
+        switch(lado_anterior){
             case 1:
                 linha1 = "|     |";
                 linha2 = "|  *  |";

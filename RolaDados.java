@@ -16,10 +16,10 @@ public class RolaDados {
 
     public int[] rolar(){
         int[] dados_rolados = new int[this.n_dados];
-        Dado d = new Dado();
+       
 
         for(int i = 0; i < this.n_dados; i++){
-            dados_rolados[i] = d.rolar();
+            dados_rolados[i] = dados[i].rolar();
             
         }
 
@@ -32,11 +32,11 @@ public class RolaDados {
         
         for(int i = 0; i < this.n_dados; i++){
             if(quais[i] == true){
-                dados_rolados[i] = this.dados[i].rolar();
+                dados_rolados[i] = dados[i].rolar();
             }
             
             else{
-                dados_rolados[i] = this.dados[i].getLado();
+                dados_rolados[i] = dados[i].getLado();
             }
         }
         return dados_rolados;
@@ -89,16 +89,16 @@ public class RolaDados {
     
 
     public static void main(String[] args){
-        // int n = 3;
-        // RolaDados r = new RolaDados(n);
+        int n = 3;
+        RolaDados r = new RolaDados(n);
 
         // int[] rolados;
         // rolados = new int[n];
 
         
         // rolados = r.rolar("1 2 3");
-        
-        // System.out.println(r.toString());
+        r.rolar();
+        System.out.println(r.toString());
 
 
     }
