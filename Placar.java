@@ -36,31 +36,34 @@ public class Placar {
         }
 
         //Posições internas do placar
-        else{
+        if(posicao == 7 && isFullHand(dados)){
+            //full hand -> tres dados de um e dois de outro (ou do mesmo))
+            //10 pontos
+            placar[posicaoReal] = 15;
 
-            /*
-             * “full hand” ou seja, três dados de
-                determinado número e dois de outro (ou do mesmo) e vale 15 pontos
-             */
+            
+        }
+
+        if(posicao == 8 && isSequencia(dados)){
+            //sequencia : numeros de 1 a 5 ou de 2 a 6
+            placar[posicaoReal] = 20;
+        }
+
+        if(posicao == 9 && isQuadra(dados)){
             
 
 
-             /*
-              * A
-                segunda é uma sequência, ou seja, os dados têm todos os números de 1 a
-                5 ou de 2 a 6, valendo 20 pontos
-
-              */
-
-              /*
-               * 
-               * A terceira é a posição da quadra (30
-                    pontos) e a última da quina, que vale 40 pontos.
-               * 
-               * 
-               */
-
+            placar[posicaoReal] = 30;
         }
+
+        if(posicao == 10 && isQuina(dados)){
+
+
+
+            placar[posicaoReal] = 40;
+        }
+
+
 
 
 
@@ -78,6 +81,75 @@ public class Placar {
         }
 
         return score;
+    }
+
+    private boolean isFullHand(int[] dados){
+        int frequencia1 = 1, frequencia2 = 0;
+        int lado1, lado2 = -1;
+        lado1 = dados[0];
+
+        for(int i = 1; i < dados.length; i++){
+            if(dados[i] == lado1) frequencia1++;
+
+            else{
+                if(lado2 == -1){
+                    lado2 = dados[i];
+                    frequencia2++;
+                }
+
+                else if(lado2 == dados[i]){
+                    frequencia2++;
+                }
+            }
+        }
+
+        if(frequencia1 == 3 && frequencia2 == 2 || frequencia1 == 5){
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean isSequencia(int[] dados){
+
+        for(int i = 0; i < dados.length - 1; i++){
+            
+        }
+
+
+
+
+
+        return false;
+    }
+
+    private boolean isQuadra(int[] dados){
+        int lado = dados[0];
+        int frequencia = 0;
+
+        for(int i = 1; i < dados.length; i++){
+            if(dados[i] == lado) frequencia++;
+
+        }
+
+        if(frequencia == 4) return true;
+        return false;
+    }
+
+
+
+    private boolean isQuina(int[] dados){
+        int lado = dados[0];
+        int frequencia = 0;
+
+        for(int i = 1; i < dados.length; i++){
+            if(dados[i] == lado) frequencia++;
+
+        }
+
+        if(frequencia == 5) return true;
+        return false;
+        
     }
 
     @Override
@@ -98,7 +170,7 @@ public class Placar {
 
         return resultado;
 
-        
+
     }
 
 
