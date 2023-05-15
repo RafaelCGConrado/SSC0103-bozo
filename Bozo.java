@@ -1,47 +1,45 @@
 public class Bozo {
-    
-    Bozo(){
-
-    }
-
-
-
-
 
     public static void main(java.lang.String[] args) throws java.io.IOException{
-        RolaDados roladados = new RolaDados(5);
+        RolaDados rD = new RolaDados(5);
         Placar placar = new Placar();
 
         for(int i = 0; i < 10; i++){
-
-            System.out.println(placar.toString());
-
-            //While !enter
-            System.out.println("Rodada " + (i+1) + ":");
             System.out.println("Pressione ENTER para iniciar a rodada:");
+            String input = EntradaTeclado.leString();
+            System.out.println(input);
+            
+            
+            while(!input.equals("")){
+                System.out.println("Pressione ENTER para iniciar a rodada:");
+                input = EntradaTeclado.leString();
+            }
 
-            roladados.rolar();
-            System.out.println(roladados.toString());
+            rD.rolar();
+            System.out.println(rD.toString());
 
-            System.out.println("Digite o número dos dados que quer trocar (separado por espaços): ");
-            String da = "1 2 3 4";
+            int[] dados = new int[5];
 
-            roladados.rolar(da);
-            System.out.println(roladados.toString());
+            for(int j = 0; j < 2; j++){
+                System.out.println("Digite quais dados você deseja rolar novamente: ");
+                String dadosNovos = EntradaTeclado.leString();
+                dados = rD.rolar(dadosNovos);
+                System.out.println(rD.toString());
 
+            }
 
-
-
-
-
+            System.out.println("Placar atual: " + placar.getScore());
+            System.out.println("Escolha a posição: ");
             System.out.println(placar.toString());
 
+            int posicao = EntradaTeclado.leInt();
+            placar.add(posicao, dados);
+            System.out.println("Placar atual: " + placar.getScore());
 
         }
-        System.out.println("Total de pontos: " + placar.getScore());
 
+        System.out.println("O placar final foi de " + placar.getScore() + "pontos!");
+    }       
 
-
-
-        }
+        
 }
