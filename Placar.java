@@ -1,19 +1,13 @@
+import java.util.Arrays;
+
 public class Placar {  
     private int[] placar;   
 
     Placar(){
-
-        //Começa preenchendo todas as posicoes
-        //do placar como -1 para sinalizar
-        //como não preenchidas
-        
-
         placar = new int[10];
         for(int i = 0; i < 10; i++){
             placar[i] = -1;
         }
-
-
 
     }
 
@@ -112,15 +106,12 @@ public class Placar {
 
     private boolean isSequencia(int[] dados){
 
-        for(int i = 0; i < dados.length ; i++){
-            
+        Arrays.sort(dados);
+        for(int i = 1; i < dados.length ; i++){
+            if(dados[i-1] != dados[i] - 1) return false;
         }
 
-
-
-
-
-        return false;
+        return true;
     }
 
     private boolean isQuadra(int[] dados){
@@ -179,15 +170,16 @@ public class Placar {
     public static void main(String[] args){
 
         Placar p = new Placar();
-        int []pontos = {1,1,1,1,1};
+        // int []pontos = {1,1,1,1,1};
 
-        for(int i = 0; i < 10; i++){
-            p.add(i + 1, pontos);
-        }
+        // for(int i = 0; i < 10; i++){
+        //     p.add(i + 1, pontos);
+        // }
 
 
-        System.out.println(p.toString());
-
+        // System.out.println(p.toString());
+        int[] dados = {6,2,4,5,3};
+        if(p.isSequencia(dados)) System.out.println("oi");
 
     }
 
