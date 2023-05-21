@@ -16,6 +16,8 @@ public class Placar {
         int posicaoReal = posicao - 1;
         int contadorFrequencia = 0;
 
+        if(placar[posicaoReal] != -1) throw new IllegalArgumentException("Posição já ocupada.");
+
         //Posicões externas do placar
         if(posicaoReal <= 6){
             
@@ -145,20 +147,26 @@ public class Placar {
 
     @Override
     public java.lang.String toString(){
-        String linha = " ----------------------";
-        String encerra = "     +--------+  ";
+        
         String resultado = new String();
 
-        for(int i = 0; i < 3; i++){
-            resultado = resultado + placar[i] + "    |   " + placar[i+6] + "    |   " + placar[i + 3] + "\n"; 
-            resultado = resultado + linha + "\n";
+        // for(int i = 0; i < 3; i++){
+        //     resultado = resultado + placar[i] + "    |   " + placar[i+6] + "    |   " + placar[i + 3] + "\n"; 
+        //     resultado = resultado + linha + "\n";
             
-        }
+        // }
 
-        resultado = resultado + "     |   " + placar[9] + "    |" + "\n" + encerra;
+        // resultado = resultado + "     |   " + placar[9] + "    |" + "\n" + encerra;
 
-    
-
+        resultado = " +---------------------------------+\n" +
+                    " |    "+ placar[0] + "    |    " +placar[6]+ "    |    " +placar[3]+ "     | " + "\n" +
+                    " +---------------------------------+\n" +
+                    " |    "+ placar[1] + "    |    " +placar[7]+ "    |    " +placar[4]+ "     | " + "\n" +
+                    " +---------------------------------+\n" +
+                    " |    "+ placar[2] + "    |    " +placar[8]+ "    |    " +placar[5]+ "     | " + "\n" +
+                    " +---------------------------------+\n" +
+                    " |          |    "  +placar[9]+ "    |          | " + "\n" +
+                    " +---------------------------------+\n";
         return resultado;
 
 

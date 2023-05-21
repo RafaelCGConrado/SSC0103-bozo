@@ -16,6 +16,7 @@ public class Bozo {
             }
 
             rD.rolar();
+            System.out.println("Rodada " + (i+1) + ":");
             System.out.println(rD.toString());
 
             int[] dados = new int[5];
@@ -35,6 +36,7 @@ public class Bozo {
             int posicao = EntradaTeclado.leInt();
             placar.add(posicao, dados);
             System.out.println("Placar atual: " + placar.getScore());
+            System.out.println(placar.toString());
 
         }
 
