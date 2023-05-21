@@ -1,35 +1,46 @@
+/*
+ * Desenvolvido por Rafael Conrado
+ */
+
 public class Dado{
     private int lados;
     private int lado_anterior;
     private static Random random = new Random();
 
     Dado(){
-        //O lado anterior é marcado como -1 (dado ainda não rolado)
         lados = 6;
-        lado_anterior = -1;
+        lado_anterior = -1; //O lado anterior é sempre inicializado com -1 (não rolado)
 
     }
 
     Dado(int n){
         lados = n;
-        lado_anterior = -1;
+        lado_anterior = -1; //O lado anterior é sempre inicializado com -1 (não rolado)
     }
 
+    /*
+     * Retorna o último lado obtido na rolagem
+     */
     int getLado(){
        return this.lado_anterior;
 
     }
 
 
-    //Faz a rolagem e armazena em lado_anterior
+    /*
+     * Rola o dado e armazena o lado obtido em lado_anterior
+     */
     int rolar(){
         int rolagem = random.getIntRand(lados);
-        rolagem++;
+        rolagem++; //Aumenta 1 no resultado aleatório para ficar entre 1 e 5
         
         lado_anterior = rolagem;
         return rolagem;
     }
 
+    /*
+     * Representa em formato de string o lado do dado obtido na rolagem
+     */
     @Override
     public java.lang.String toString(){
         String extremidade = "+-----+";
@@ -85,7 +96,10 @@ public class Dado{
         String resultado = (extremidade+"\n"+linha1+"\n"+linha2+"\n"+linha3+"\n"+extremidade);
         return resultado;
         }
-
+    
+    /*
+     * Usada apenas para testes
+     */
     public static void main(String[] args){
         Dado dado = new Dado();
         // System.out.println(dado.lado_anterior);
